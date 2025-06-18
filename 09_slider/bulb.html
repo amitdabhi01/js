@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" >
+</head>
+<body class="p-5">
+    
+    <div class="d-flex flex-column align-items-center">
+        <div class="d-flex align-items-center justify-content-between gap-5">
+            <!-- <button onclick="onBulb()" class="btn btn-outline-success">On</button> -->
+            <div class="form-check form-switch">
+                <input class="form-check-input" onclick="onBulb()" type="checkbox" value="" id="checkNativeSwitch" switch>
+            </div>
+            <span id="lamp" class="text-bg-secondary d-block p-2 rounded-circle " ></span>
+            <!-- <button onclick="offBulb()" class="btn btn-outline-danger active">Off</button> -->
+        </div>
+        <img id="img" style="transition:  all 0.5s;" width="200" src="https://toppng.com/uploads/preview/light-bulb-on-off-png-115539402943y50vxr5yi.png" alt="">
+    </div>
+
+</body>
+
+<script>
+   let img = document.getElementById("img")
+   let lamp = document.getElementById("lamp")
+
+   let onimg = "https://toppng.com/uploads/preview/light-bulb-on-off-png-11553940319kdxsp3rf0i.png"
+   let offimg = "https://toppng.com/uploads/preview/light-bulb-on-off-png-115539402943y50vxr5yi.png"
+
+    function onBulb(){
+        if(img.src == offimg)
+        {
+            img.src= onimg
+            lamp.classList.replace("text-bg-secondary", "text-bg-warning")
+        }
+        else{
+            img.src= offimg;
+            lamp.classList.replace("text-bg-warning", "text-bg-secondary")
+        }
+    }
+
+
+
+    // function offBulb(){
+    //     img.src= offimg
+    // }
+
+
+</script>
+</html>
