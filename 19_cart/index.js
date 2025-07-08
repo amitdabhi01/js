@@ -251,23 +251,70 @@ let data = [
 ]
 
 function addToCart(id){
-    let obj = data.find((el) => el.id == id)
-    cart.push(obj)
-    console.log(cart)
-    cartLength.textContent = cart.length
+  let isExits = cart.some((ele) => ele.id == id)
+    if(isExits){
+      window.alert("Item Already Exits in Cart 🛒")
+    }
+    else{
+      let obj = data.find((el) => el.id == id)
+      obj.qtn = 1;
+      cart.push(obj)
+      showCart(cart)
+    }
+}
 
-    showCart(cart)
-    let sum = 0
-    cart.forEach((ele) => {
-        sum = sum + ele.price
-    })
 
-    total.textContent = sum
+function showTotal(cart){
+  let sum = 0
+  cart.forEach((el) => {
+    sum = sum + el.price*el.qtn
+  })
+  total.textContent = sum
+}
+
+
+function removeCartItem(id){
+  cart = cart.filter((ele) => ele.id != id)
+  showCart(cart)
+}
+
+
+function decCount(id){
+  cart = cart.map((ele) => {
+    if(ele.id == id){
+      ele.qtn = ele.qtn-1
+    }
+    return ele
+  })
+
+  cart = cart.filter((ele) => {
+    if(ele.qtn >= 1){
+      return ele
+    }
+  })
+
+  showCart(cart)
+  console.log(cart)
+}
+
+
+function incCount(id){
+  cart = cart.map((ele) => {
+    if(ele.id == id){
+      ele.qtn = ele.qtn+1
+    }
+    return ele
+  })
+
+  showCart(cart)
+  console.log(cart)
 }
 
 
 function showCart(arr){
     cartRow.innerHTML = ""
+    cartLength.textContent = arr.length;
+    showTotal(arr)
     arr.map((ele) => {
         cartRow.innerHTML += `
                     <div class="col-12">
@@ -285,10 +332,11 @@ function showCart(arr){
                                         <h5 class="card-title">${ele.title}</h5>
                                         <p class="card-text">${ele.category}</p>
                                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                        <button type="button" class="btn btn-danger btn-sm">-</button>
-                                        <button type="button" class="btn  btn-sm">0</button>
-                                        <button type="button" class="btn btn-success btn-sm">+</button>
+                                        <button onclick="decCount(${ele.id})" type="button" class="btn btn-danger btn-sm">-</button>
+                                        <button type="button" class="btn  btn-sm">${ele.qtn}</button>
+                                        <button onclick="incCount(${ele.id})" type="button" class="btn btn-success btn-sm">+</button>
                                         </div>
+                                        <button onclick="removeCartItem(${ele.id})" class="btn p-1 rounded-circle ms-4"><i class="bi bi-trash"></i></button>
                                     </div>
                                 </div>
                             </div>
