@@ -58,13 +58,13 @@
     }
 
     function checkIncludes(){
-      let result = arr.includes(3);
-      showOutput("Includes 3? " + result);
+      let result = arr.includes(5);
+      showOutput("Includes 5? " + result);
     }
 
-    function findIndex4(){
-      let result = arr.findIndex(x => x > 4);
-      showOutput("First index > 4: " + result);
+    function findIndex1(){
+      let result = arr.findIndex(x => x > 1);
+      showOutput("First index > 1: " + result);
     }
 
     function everyPositive(){
