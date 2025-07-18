@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Function</title>
+  <style>
+    *{
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    input, button { margin: 5px; padding: 10px; border: 1px solid gray; border-radius: 10px;}
+    #output, #arrayDisplay { font-size: 18px; margin-top: 10px; color: #2c3e50; }
+  </style>
+</head>
+<body>
+
+  <h2>🔢 Array Function</h2>
+
+  <label>🔹 Enter array value:</label><br>
+  <input type="text" id="arrayInput" placeholder="e.g. 1,2,3,4">
+  <button onclick="setArray()">Set Array</button><br>
+
+  <label>🔹 Enter single value:</label><br>
+  <input type="number" id="singleValue" placeholder="e.g. 5">
+
+  <p><strong>Current Array:</strong> <span id="arrayDisplay"></span></p>
+
+  <div>
+    <button onclick="pushItem()">Push</button>
+    <button onclick="popItem()">Pop</button>
+    <button onclick="shiftItem()">Shift</button>
+    <button onclick="unshiftItem()">Unshift</button>
+    <button onclick="spliceItem()">Splice at index 1</button>
+  </div>
+
+  <div>
+    <button onclick="mapTriple()">Map (x3)</button>
+    <button onclick="filterEven()">Filter Even</button>
+    <button onclick="checkIncludes()">Includes 3?</button>
+    <button onclick="findIndex4()">FindIndex > 4</button>
+    <button onclick="everyPositive()">Every > 0?</button>
+    <button onclick="someGreaterThan5()">Some > 5?</button>
+  </div>
+
+  <div id="output"></div>
+  </body>
+  <script src="script.js"></script>
+  </html>
