@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corona_api</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<style>
-</style>
-
 <body>
-    <div class="container">
+    <div class="container my-5">
+        <h1 class="text-center mb-4">🌎 Covid-19 Data</h1>
 
+        <form id="countriesForm" class="mb-5">
+            <div class="input-group">
+                <input type="text" placeholder="Enter Country Name" class="form-control" id="countriesInput">
+                <button class="btn btn-success">Search Data</button>
+            </div>
+        </form>
+
+        <section id="results" class="card shadow p-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h1 class="text-center mt-1 mb-4">Corona Cases</h1>
+                    <div>
+                        <div id="coronaCard" class="text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 
-<script>
-
-    fetch('https://disease.sh/v3/covid-19/countries')
-    .then((res) => )
-    .then((data) => res.json())
-
-    let container = document.querySelector(".conatiner")
-
-</script>
+<script src="script.js"></script>
 
 </html>
