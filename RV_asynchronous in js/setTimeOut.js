@@ -24,7 +24,7 @@ const currentYear = () => {
     console.log("checking current Year");
 
     setTimeout(() => {
-        let currentYear = new Date().getFullYear;
+        let currentYear = new Date().getFullYear();
         console.log("current year: ", currentYear)
     }, 5000)
 }
