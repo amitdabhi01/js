@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock & Quotes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container my-4 gap-4 py-3">
+        <h1 class="text-center">Clock & Quotes</h1>
+
+        <div class="box border bg-light text-danger rounded-3 text-center py-2 my-3 fs-2" id="clock"></div>
+
+        <div class="box border bg-secondary rounded-3 text-center py-2 my-3 fs-5 text-white" id="quotes"></div>
+
+        <button class="btn btn-sm btn-success" onclick="newQuote()">New Quote</button>
+    </div>
+
+    <script>
+        // 🕒 Clock Logic
+        const clock = document.getElementById("clock");
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            clock.textContent = timeStr;
+        }
+        setInterval(updateClock, 1000);
+
+        // ✨ Quotes Logic
+        const quotes = [
+            "Believe you can and you're halfway there.",
+            "Every moment is a fresh beginning.",
+            "Push yourself, because no one else is going to do it for you."
+        ];
+
+        const quoteDiv = document.getElementById("quotes");
+
+        function newQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            quoteDiv.textContent = `"${quotes[randomIndex]}"`;
+        }
+
+        // Load first quote
+        newQuote();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
