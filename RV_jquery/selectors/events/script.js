@@ -33,22 +33,44 @@
 
 // on mouse enter 
 
-$("document").ready(()=>{
-    $("#img").mouseenter(()=>{
-        $("#img").css({
-            width : "500",
-            height : "400",
-        })
-    })
-})
+// $("document").ready(()=>{
+//     $("#img").mouseenter(()=>{
+//         $("#img").css({
+//             width : "500",
+//             height : "400",
+//         })
+//     })
+// })
 
 // on mouse leave
 
-$("document").ready(() => {
-    $("#img").mouseleave(()=>{
-        $("#img").css({
-            width : "400",
-            height : "300",
-        })
-    })
-})
+// $("document").ready(() => {
+//     $("#img").mouseleave(()=>{
+//         $("#img").css({
+//             width : "400",
+//             height : "300",
+//         })
+//     })
+// })
+
+// keys event
+
+// $("document").ready(() => {
+//   $("#btn").keyup(() => {
+//     $("#img").css({
+//       width: "500px",
+//       height: "400px",
+//     });
+//   });
+// });
+
+// key down
+
+// $("document").ready(() => {
+//   $("#btn").keydown(() => {
+//     $("#img").css({
+//       width: "500px",
+//       height: "400px",
+//     }); 
+//   });
+// });
