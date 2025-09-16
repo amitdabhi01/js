@@ -10,12 +10,12 @@
 // callback example
 
 function callbackFun(result){
-    console.log("The totle of sum is: ", result)
+    console.log("Total sum of: ", result)
 }
 
-function totalSumOfNum(a, b, callbackFun){
+function totalSum(a, b, callbackFun){
     let result = a + b;
     callbackFun(result)
 }
 
-totalSumOfNum(10, 20, callbackFun)
+totalSum(10, 20, callbackFun)

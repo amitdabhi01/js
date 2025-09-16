@@ -18,15 +18,33 @@ const greeting = () => {
 
 greeting()
 
+
 // another example
 
+
 const currentYear = () => {
-    console.log("checking current Year");
+    console.log("checking current year");
 
     setTimeout(() => {
         let currentYear = new Date().getFullYear();
-        console.log("current year: ", currentYear)
-    }, 5000)
+        console.log("Current Year: ", currentYear)
+    }, 3000)
 }
 
 currentYear()
+
+
+// another example
+
+
+console.log("hello 1")
+
+setTimeout(() => {
+    console.log("hello 2")
+}, 1000)
+
+console.log("hello 3")
+
+setTimeout(() => {
+    console.log("hello 4")
+}, 2000)
