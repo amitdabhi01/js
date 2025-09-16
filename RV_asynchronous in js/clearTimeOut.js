@@ -2,26 +2,21 @@
 
 // example
 
-let stop; // Declare the stop variable to store the timer ID
+let stop;
 
 const currentTime = () => {
-    // Return the current date and time
+  let dateAndTime = new Date();
 
-    let dateAndTime = new Date()
+  let time = dateAndTime.toLocaleString();
 
-    let time = dateAndTime.toLocaleString()
+  console.log(time);
 
-    console.log(time)
-
-    // Schedule the next execution and store the timer ID in 'stop'
-    stop = setTimeout(currentTime, 3000);
+  stop  = setTimeout(currentTime, 2000);
 }
 
-// Start the initial call
 currentTime();
 
-// Stop the timer after 10 seconds
 setTimeout(() => {
   clearTimeout(stop);
-  console.log("Timer stopped");
-}, 10000);
+  console.log("Timer Stopped");
+}, 10000)
